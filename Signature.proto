@@ -63,19 +63,19 @@ message Signature {
     }
 
     // Apparently iOS only
-    message Unknown9 {
+    message AppVersion {
         // all of these had 1 as their value
-        uint64 unk3 = 3;
-        uint64 unk5 = 5;
-        uint64 unk6 = 6;
-    }
+        uint64 version_major = 3;
+        uint64 version_minor = 5;
+        uint64 version_patch = 6;
+     }
 
     uint64 timestamp_since_start = 2; // in ms
     repeated LocationFix location_fix = 4;
     Unknown5 unk5 = 5;
     SensorInfo sensor_info = 7;
     DeviceInfo device_info = 8;
-    Unknown9 unk9 = 9;
+    AppVersion app_version = 9;
     uint32 location_hash1 = 10; // Location1 hashed based on the auth_token - xxHash32
     uint32 location_hash2 = 20; // Location2 hashed based on the auth_token - xxHash32
     bytes unk22 = 22; // possibly replay check. Generation unknown but pointed to by 0001B8614
